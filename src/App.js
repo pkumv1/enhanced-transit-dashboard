@@ -1,6 +1,32 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef, useReducer, createContext, useContext } from 'react';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
-import { AlertTriangle, TrendingUp, TrendingDown, Users, Activity, Shield, MapPin, Clock, CheckCircle, Cpu, CreditCard, DoorOpen, Monitor, Filter, Search, Wifi, WifiOff, Zap, Database, BarChart3, RefreshCw, Bell, BellOff, ChevronDown, X } from 'lucide-react';
+import { 
+  AlertTriangle, 
+  TrendingUp, 
+  TrendingDown, 
+  Users, 
+  Activity, 
+  Shield, 
+  MapPin, 
+  Clock, 
+  CheckCircle, 
+  Cpu, 
+  CreditCard, 
+  DoorOpen, 
+  Monitor, 
+  Filter, 
+  Search, 
+  Wifi, 
+  WifiOff, 
+  Zap, 
+  Database, 
+  BarChart3, 
+  RefreshCw, 
+  Bell, 
+  BellOff, 
+  ChevronDown, 
+  X 
+} from 'lucide-react';
 
 // ===== CONTEXT AND STATE MANAGEMENT =====
 const DashboardContext = createContext();
@@ -752,7 +778,7 @@ const EnhancedTransitAFCDashboard = () => {
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [analysisType, setAnalysisType] = useState('');
 
-  // City configurations
+  // City configurations with proper dependency in useMemo
   const cityConfig = useMemo(() => ({
     boston: {
       name: 'MBTA (Boston)',
