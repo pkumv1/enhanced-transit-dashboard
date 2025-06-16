@@ -2,13 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="AI-Powered Transit System Predictive Analytics Dashboard - Monitor and analyze transit infrastructure with real-time data and predictive maintenance." />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'transit-blue': '#3B82F6',
+              'transit-green': '#10B981',
+              'transit-purple': '#8B5CF6',
+            }
+          }
+        }
+      }
+    </script>
     <title>Enhanced Transit Dashboard</title>
   </head>
   <body>
