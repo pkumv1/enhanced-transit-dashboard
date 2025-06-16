@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef, useReducer, createContext, useContext } from 'react';
-import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter, AreaChart, Area, ComposedChart } from 'recharts';
-import { AlertTriangle, TrendingUp, TrendingDown, Users, DollarSign, Activity, Shield, MapPin, Clock, CheckCircle, XCircle, AlertCircle, Wrench, Cpu, CreditCard, DoorOpen, Monitor, Settings, Filter, Download, Search, Calendar, Wifi, WifiOff, Zap, Database, BarChart3, Eye, EyeOff, Maximize2, Minimize2, RefreshCw, Bell, BellOff, ChevronDown, ChevronUp, X, Play, Pause, RotateCcw, FileDown, Share2, MessageSquare, Layers, Target, Home, Map, List, Grid, MoreVertical, ChevronRight, Bookmark, Star } from 'lucide-react';
+import { LineChart, Line, ResponsiveContainer } from 'recharts';
+import { AlertTriangle, TrendingUp, TrendingDown, Users, Activity, Shield, MapPin, Clock, CheckCircle, Cpu, CreditCard, DoorOpen, Monitor, Filter, Search, Wifi, WifiOff, Zap, Database, BarChart3, RefreshCw, Bell, BellOff, ChevronDown, X } from 'lucide-react';
 
 // ===== CONTEXT AND STATE MANAGEMENT =====
 const DashboardContext = createContext();
@@ -753,7 +753,7 @@ const EnhancedTransitAFCDashboard = () => {
   const [analysisType, setAnalysisType] = useState('');
 
   // City configurations
-  const cityConfig = {
+  const cityConfig = useMemo(() => ({
     boston: {
       name: 'MBTA (Boston)',
       operator: 'Massachusetts Bay Transportation Authority',
@@ -770,9 +770,9 @@ const EnhancedTransitAFCDashboard = () => {
       timezone: 'EST',
       currency: 'USD'
     }
-  };
+  }), []);
 
-  const deviceInventory = {
+  const deviceInventory = useMemo(() => ({
     boston: {
       readers: { total: 450, operational: 425, critical: 8, warning: 17 },
       fvms: { total: 298, operational: 285, critical: 3, warning: 10 },
@@ -783,7 +783,7 @@ const EnhancedTransitAFCDashboard = () => {
       fvms: { total: 185, operational: 178, critical: 2, warning: 5 },
       gates: { total: 387, operational: 362, critical: 3, warning: 22 }
     }
-  };
+  }), []);
 
   const deviceData = useMemo(() => {
     const baseData = {
@@ -878,7 +878,7 @@ const EnhancedTransitAFCDashboard = () => {
       subtitle: "Transaction time",
       trend: generateTrendData(state.realtimeData.avgResponseTime, 12)
     }
-  ], [state.realtimeData, state.selectedCity, generateTrendData]);
+  ], [state.realtimeData, state.selectedCity, cityConfig, generateTrendData]);
 
   const handleDeviceAnalysis = useCallback((deviceId, analysisTypeParam = 'analysis') => {
     try {
