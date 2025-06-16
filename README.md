@@ -79,6 +79,19 @@ npm start
 
 The application will open at `http://localhost:3000`
 
+### 🚨 Having Issues?
+
+If you encounter errors like `URIError: Failed to decode param`, see our **[Troubleshooting Guide](TROUBLESHOOTING.md)** for quick fixes.
+
+**Quick Fix for Common Issues:**
+```bash
+# Clear cache and reinstall dependencies
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+npm start
+```
+
 ### Building for Production
 
 ```bash
@@ -229,9 +242,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 **Support**
 
-- 📧 **Email**: [Create an Issue](https://github.com/pkumv1/enhanced-transit-dashboard/issues)
-- 📚 **Documentation**: [Wiki](https://github.com/pkumv1/enhanced-transit-dashboard/wiki)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/pkumv1/enhanced-transit-dashboard/discussions)
+### 🆘 **Need Help?**
+
+1. **📋 Check Common Issues:** [Troubleshooting Guide](TROUBLESHOOTING.md)
+2. **🔍 Search Issues:** [GitHub Issues](https://github.com/pkumv1/enhanced-transit-dashboard/issues)
+3. **💬 Ask Questions:** [GitHub Discussions](https://github.com/pkumv1/enhanced-transit-dashboard/discussions)
+4. **📚 Read Docs:** [Contributing Guide](CONTRIBUTING.md)
+
+### 🐛 **Reporting Issues**
+
+When reporting issues, please include:
+- **Environment:** OS, Node.js version, browser
+- **Steps to reproduce:** Clear, numbered steps
+- **Error logs:** Full error messages from console
+- **Expected vs actual behavior**
+
+### 📧 **Contact**
+- **Bug Reports:** [Create an Issue](https://github.com/pkumv1/enhanced-transit-dashboard/issues/new)
+- **Feature Requests:** [GitHub Discussions](https://github.com/pkumv1/enhanced-transit-dashboard/discussions/new)
+- **Documentation:** [Project Wiki](https://github.com/pkumv1/enhanced-transit-dashboard/wiki)
 
 ---
 
